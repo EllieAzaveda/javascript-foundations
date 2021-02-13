@@ -3,27 +3,20 @@ class Hobbit {
     this.name = name;
     this.adult = adult;
     this.hasRing = hasRing;
-
-    if(age === undefined) {
-      this.age = 0;
-    } else {
-      this.age = age;
-    };
-
-    if(age <= 32) {
-      this.adult = false;
-    } else {
-      this.adult = true;
-    };
-
-    if(age >= 101) {
-      this.old = old;
-    };
-
+    this.age = age || 0;
+    this.old = false;
   }
 
   celebrateBirthday() {
     this.age += 1;
+    if(this.age <= 32) {
+      this.adult = false;
+    } else if (this.age >= 101) {
+      this.adult = false;
+      this.old = true;
+    } else {
+      this.adult = true;
+    }
   }
 
   getRing() {
