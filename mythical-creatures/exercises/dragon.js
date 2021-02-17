@@ -1,14 +1,9 @@
-var hasMeal = 0;
-
 class Dragon {
   constructor(name, rider, hungry) {
     this.name = name;
     this.rider = rider;
-    if (hungry === undefined) {
-      this.hungry = true;
-    } else {
-      this.hungry = hungry;
-    }
+    this.hungry = hungry || true;
+    this.hasMeal = 0;
   }
 
   greet(greeting){
@@ -16,8 +11,8 @@ class Dragon {
   }
 
   eat() {
-    hasMeal++;
-    if(hasMeal >= 3) {
+    this.hasMeal++;
+    if(this.hasMeal >= 3) {
       this.hungry = false;
     }
   }
