@@ -13,7 +13,7 @@ class Magician {
     this.confidencePercentage = 10;
   }
 
-performIncantation(x){
+  performIncantation(x){
   if(x === 'abracadabra') {
     return 'ABRACADABRA!';
   } else {
@@ -21,7 +21,7 @@ performIncantation(x){
   }
 };
 
-performTrick(clothing) {
+  performTrick(clothing) {
   this.confidencePercentage += 10;
   if(this.clothing === 'top hat' || this.favoriteAccessory === 'top hat'){
     return 'PULL RABBIT FROM TOP HAT';
@@ -31,7 +31,7 @@ performTrick(clothing) {
 }
 
 // Come back to this and figure out how to stop confidence at 100%
-performShowStopper() {
+  performShowStopper() {
   if (this.confidencePercentage >= 100 && this.assistant === true) {
     return 'WOW! The magician totally just sawed that person in half!';
   } else {
